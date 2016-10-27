@@ -1,0 +1,24 @@
+version: "2"
+
+services:
+  os-test-1:
+    container_name: os-test-1
+    image: murf66/docker-opensim
+    volumes:
+     - ./startup.sh:/etc/my_init.d/startup.sh
+     - ./OpenSim.ini:/opt/opensim/bin/OpenSim.ini
+     - ./volumes/config-include/:/opt/opensim/bin/config-include/
+     - ./volumes/Regions/:/opt/opensim/bin/Regions/
+     - ./volumes/db/OpenSim.db:/opt/opensim/bin/OpenSim.db
+     - ./volumes/OpenSim.log:/opt/opensim/bin/OpenSim.log
+     - ./volumes/db/friends.db:/opt/opensim/bin/friends.db
+     - ./volumes/db/Asset.db:/opt/opensim/bin/Asset.db
+     - ./volumes/db/auth.db:/opt/opensim/bin/auth.db
+     - ./volumes/db/avatars.db:/opt/opensim/bin/avatars.db
+     - ./volumes/db/griduser.db:/opt/opensim/bin/griduser.db
+     - ./volumes/db/inventory.db:/opt/opensim/bin/inventory.db
+     - ./volumes/db/userprofiles.db:/opt/opensim/bin/userprofiles.db
+    ports:
+      - "REPLACE_WITH_TCP_PORT:REPLACE_WITH_TCP_PORT"
+      - "REPLACE_WITH_UDP_PORT_RANGE:REPLACE_WITH_UDP_PORT_RANGE/udp"
+
