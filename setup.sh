@@ -45,7 +45,7 @@ do
         "Metaversum HG")
             echo "Configuring Opensim for Metaversum with Hypergrid"
             cp config/ini-templates/metaversum/config-include/*.ini volumes/config-include
-            sed -e "s/127.0.0.1/$EXTERNAL_IP/" ini-templates//metaversum/OpenSim.ini.Metaversum > OpenSim.ini
+            sed -e "s/127.0.0.1/$EXTERNAL_IP/" config/ini-templates//metaversum/OpenSim.ini.Metaversum > OpenSim.ini
             sed -i "s/9000/$PORT/" OpenSim.ini
             break
             ;;
